@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .add-button {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+      }
+
+      .sidebar {
+        width: 200px;
+        float: left;
+        padding-right: 24px;
+      }
+
+      .category {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        cursor: pointer;
+      }
+
+      .category-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+
+      .category-work {
+        background-color: #8884ff;
+      }
+      .category-study {
+        background-color: #84b6ff;
+      }
+      .category-entertainment {
+        background-color: #ff8484;
+      }
+      .category-family {
+        background-color: #84ff9d;
+      }
+
+      .category span {
+        color: #666;
+      }
+
+      .hide-done {
+        display: flex;
+        align-items: center;
+        margin-top: 24px;
+        color: #666;
+      }
+
+      .hide-done input {
+        margin-right: 8px;
+      }
+
+      .main-content {
+        margin-left: 200px;
+      }
+
+      .task-card {
+        background-color: #fff9e6;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        position: relative;
+      }
+
+      .task-title {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .task-description {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .task-categories {
+        display: flex;
+        gap: 8px;
+      }
+
+      .task-category {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+      }
+
+      .task-menu {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        color: #666;
+        cursor: pointer;
+      }
+
+      .task-done {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        color: #666;
+      }
+
+      .avatar {
+        margin-top: 32px;
+        text-align: center;
+      }
+
+      .avatar img {
+        width: 120px;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 100%;
+          float: none;
+          margin-bottom: 24px;
+        }
+
+        .main-content {
+          margin-left: 0;
+        }
+
+        .container {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>todo</h1>
+        <button class="add-button">+</button>
+      </div>
+
+      <div class="sidebar">
+        <div class="category">
+          <div class="category-dot category-work"></div>
+          <span>work</span>
+        </div>
+        <div class="category">
+          <div class="category-dot category-study"></div>
+          <span>study</span>
+        </div>
+        <div class="category">
+          <div class="category-dot category-entertainment"></div>
+          <span>entertainment</span>
+        </div>
+        <div class="category">
+          <div class="category-dot category-family"></div>
+          <span>family</span>
+        </div>
+
+        <div class="hide-done">
+          <input type="checkbox" id="hide-done" />
+          <label for="hide-done">Hide Done Tasks</label>
+        </div>
+
+        <div class="avatar">
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <rect x="30" y="90" width="60" height="20" fill="#84B6FF" />
+            <circle
+              cx="60"
+              cy="50"
+              r="30"
+              fill="none"
+              stroke="#333"
+              stroke-width="2"
+            />
+            <line
+              x1="45"
+              y1="45"
+              x2="45"
+              y2="45"
+              stroke="#333"
+              stroke-width="2"
+            />
+            <line
+              x1="75"
+              y1="45"
+              x2="75"
+              y2="45"
+              stroke="#333"
+              stroke-width="2"
+            />
+            <path
+              d="M45 60 Q60 70 75 60"
+              fill="none"
+              stroke="#333"
+              stroke-width="2"
+            />
+            <line
+              x1="30"
+              y1="30"
+              x2="90"
+              y2="30"
+              stroke="#333"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="task-card">
+          <div class="task-title">The first task title</div>
+          <div class="task-description">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor in
+          </div>
+          <div class="task-categories">
+            <div class="task-category category-study"></div>
+            <div class="task-category category-entertainment"></div>
+            <div class="task-category category-work"></div>
+          </div>
+          <div class="task-menu">...</div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title">The second task title</div>
+          <div class="task-description">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet
+          </div>
+          <div class="task-menu">...</div>
+          <div class="task-done">□ Done</div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title">The third task title</div>
+          <div class="task-description">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+          </div>
+          <div class="task-categories">
+            <div class="task-category category-entertainment"></div>
+            <div class="task-category category-work"></div>
+          </div>
+          <div class="task-menu">...</div>
+          <div class="task-done">✓ Done</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
