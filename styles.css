@@ -8,15 +8,9 @@ body{
     margin: 50px;
 }
 
-h1, i{
-    top: 0;
-}
-
-.task. label {
+.task, label {
     left: 0; 
 }
-
-#vertical {}
 
 #listBox, #horizontal{
     display: flex;
