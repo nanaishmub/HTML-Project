@@ -1,76 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do List</title>
     <style>
-        body{
-            text-align: center;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            background-color: rgb(1, 16, 22);
-            color: white;*/
-        }
-        form {
-          width: 60vw;
-          margin: 0 auto;
-          max-width: 500px;
-          min-width: 300px;
-        }
-        label{
-            display: block;
-            margin: 0.5rem 0;
-            text-align: left;
-        }
-        fieldset{
-            border: none;
-            padding: 2rem;
-        }
-        .status{
-            vertical-align: middle;
-            position: relative;
-            display: inline;
-            margin: 0 1rem 0 0;
-            width: unset;
-        }
-        input, textarea{
-            margin: 10px 0 0 0;
-            width: 100%;
-            border: 0;
-            border-radius: 3px;
-        }
+      body {
+        text-align: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-color: rgb(1, 16, 22);
+        color: white;
+      }
+      form {
+        width: 60vw;
+        margin: 0 auto;
+        max-width: 500px;
+        min-width: 300px;
+      }
+      label {
+        display: block;
+        margin: 0.5rem 0;
+        text-align: left;
+      }
+      fieldset {
+        border: none;
+        padding: 2rem;
+      }
+      .status {
+        vertical-align: middle;
+        position: relative;
+        display: inline;
+        margin: 0 1rem 0 0;
+        width: unset;
+      }
+      input,
+      textarea {
+        margin: 10px 0 0 0;
+        width: 100%;
+        border: 0;
+        border-radius: 3px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>To-do List Form</h1>
     <form>
-        <fieldset>
-            <h4>Task Details</h4>
-            <label>Title: 
-                <input id="title" type="text" name="title" placeholder="Task title">
-            </label>
-            <label>Description: 
-                <textarea id="Description" type="text" name="Description" row="3" cols="30" placeholder="Task Description"></textarea>
-            </label>
-        </fieldset>
-        <hr>
-        <fieldset>
-            <h4>Status:</h4>
-            <label> 
-                <input id="complete" class="status" type="radio" name="Status" for="Complete">
-                Complete
-            </label>
-            <label> 
-                <input id="incomplete" class="status" type="radio" name="Status" for="Incomplete">
-                Incomplete
-            </label>
-            <label> 
-                <input id="ongoing" class="status" type="radio" name="Status" for="On-going">
-                On-going
-            </label>
-        </fieldset>
-        <input type="submit" value="Done">
+      <fieldset>
+        <h4>Task Details</h4>
+        <label
+          >Title:
+          <input id="title" type="text" name="title" placeholder="Task title" />
+        </label>
+        <label
+          >Description:
+          <textarea
+            id="Description"
+            type="text"
+            name="Description"
+            row="3"
+            cols="30"
+            placeholder="Task title"
+          ></textarea>
+        </label>
+      </fieldset>
+      <hr />
+      <fieldset>
+        <h4>Status:</h4>
+        <label>
+          <input
+            id="complete"
+            class="status"
+            type="radio"
+            name="Status"
+            for="Complete"
+          />
+          Complete
+        </label>
+        <label>
+          <input
+            id="incomplete"
+            class="status"
+            type="radio"
+            name="Status"
+            for="Incomplete"
+          />
+          Incomplete
+        </label>
+        <label>
+          <input
+            id="ongoing"
+            class="status"
+            type="radio"
+            name="Status"
+            for="On-going"
+          />
+          On-going
+        </label>
+      </fieldset>
+      <input type="submit" value="Done" />
     </form>
-    
-</body>
+  </body>
 </html>
