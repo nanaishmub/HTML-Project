@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Add new task
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const status = document.querySelector('input[name="status"]:checked').value;
